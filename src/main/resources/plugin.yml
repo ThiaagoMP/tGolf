@@ -1,0 +1,4 @@
+name: tGolf
+version: '1.0'
+main: br.com.thiaago.golf.GolfPlugin
+description: Golf plugin developed for DevRoom
