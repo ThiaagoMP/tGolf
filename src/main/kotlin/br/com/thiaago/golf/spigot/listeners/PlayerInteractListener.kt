@@ -21,8 +21,8 @@ class PlayerInteractListener : Listener {
         val armorStand = event.entity as ArmorStand
         val player = event.damager as Player
 
-        if (!NBTEditor.contains(player.itemInHand, Constants.GOLF_CLUB_NBT.value)) return
-        val power = NBTEditor.getDouble(player.itemInHand, Constants.GOLF_CLUB_NBT.value)
+        if (!NBTEditor.contains(player.inventory.itemInMainHand, Constants.GOLF_CLUB_NBT.value)) return
+        val power = NBTEditor.getDouble(player.inventory.itemInMainHand, Constants.GOLF_CLUB_NBT.value)
 
         val playerGolfSwingEvent = PlayerGolfSwingEvent(player, power, armorStand)
         Bukkit.getPluginManager().callEvent(playerGolfSwingEvent)

@@ -8,15 +8,15 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+
     maven {
-        name = 'spigotmc-repo'
-        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        name = 'papermc-repo'
+        url = 'https://repo.papermc.io/repository/maven-public/'
     }
     maven {
         name = 'sonatype'
         url = 'https://oss.sonatype.org/content/groups/public/'
     }
-
     maven { url = "https://repo.triumphteam.dev/snapshots/" }
 
     maven {
@@ -27,12 +27,12 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+    compileOnly 'com.destroystokyo.paper:paper-api:1.12-R0.1-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'com.zaxxer:HikariCP:5.0.1'
 
     implementation "dev.triumphteam:triumph-cmd-bukkit:2.0.0-SNAPSHOT"
-    implementation "dev.triumphteam:triumph-gui:3.1.2"
+    implementation 'dev.triumphteam:triumph-gui:3.1.3'
     implementation 'io.github.bananapuncher714:nbteditor:7.18.3'
 }
 
@@ -48,7 +48,7 @@ jar {
                 "Main-Class": "br.com.thiaago.golf.GolfPlugin"
         )
     }
-    destinationDirectory = file("C:\\Users\\thiaa\\Documents\\Programação\\Spigot 1.8.8\\plugins")
+    destinationDirectory = file("C:\\Users\\thiaa\\Documents\\Programação\\Paper 1.12\\plugins")
     archivesBaseName = 'tGolf'
     version = ""
 }

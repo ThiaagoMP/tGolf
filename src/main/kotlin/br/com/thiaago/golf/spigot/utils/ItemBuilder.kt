@@ -1,12 +1,11 @@
 package br.com.thiaago.golf.spigot.utils
 
-import org.bukkit.*
+import org.bukkit.ChatColor
+import org.bukkit.DyeColor
+import org.bukkit.Material
 import org.bukkit.inventory.ItemFlag
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.BannerMeta
-import org.bukkit.inventory.meta.FireworkEffectMeta
-import org.bukkit.inventory.meta.LeatherArmorMeta
-import org.bukkit.inventory.meta.SkullMeta
 import java.util.*
 import java.util.function.UnaryOperator
 
@@ -98,43 +97,6 @@ class ItemBuilder : ItemStack {
         itemMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES)
         itemMeta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE)
         setItemMeta(itemMeta)
-        return this
-    }
-
-    fun setOwner(owner: String?): ItemBuilder {
-        val skullMeta = itemMeta as SkullMeta
-        skullMeta.owner = owner
-        itemMeta = skullMeta
-        return this
-    }
-
-    fun setColor(color: Color?): ItemBuilder {
-        val itemMeta = itemMeta as LeatherArmorMeta
-        itemMeta.color = color
-        setItemMeta(itemMeta)
-        return this
-    }
-
-    fun setColor(color: DyeColor): ItemBuilder {
-        durability = color.data.toShort()
-        return this
-    }
-
-    fun setFireworkColor(color: Color?): ItemBuilder {
-        val itemMeta = itemMeta
-        val fireworkMeta = itemMeta as FireworkEffectMeta
-        val fireworkEffect = FireworkEffect.builder().withColor(color).build()
-        fireworkMeta.effect = fireworkEffect
-        setItemMeta(fireworkMeta)
-        return this
-    }
-
-    fun setFireworkColor(blue: Int, green: Int, red: Int): ItemBuilder {
-        val itemMeta = itemMeta
-        val fireworkMeta = itemMeta as FireworkEffectMeta
-        val fireworkEffect = FireworkEffect.builder().withColor(Color.fromBGR(blue, green, red)).build()
-        fireworkMeta.effect = fireworkEffect
-        setItemMeta(fireworkMeta)
         return this
     }
 

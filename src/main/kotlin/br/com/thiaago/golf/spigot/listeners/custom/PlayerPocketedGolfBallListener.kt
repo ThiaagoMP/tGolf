@@ -21,7 +21,7 @@ class PlayerPocketedGolfBallListener(
             golfController.players.firstOrNull { golfPlayer -> golfPlayer.player == event.golfSwing.player } ?: return
         val player = golfPlayer.player.player
         golfPlayer.points++
-        player.playSound(player.location, Sound.LEVEL_UP, 1f, 1f)
+        player.playSound(player.location, Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f)
         player.sendMessage(
             ChatColor.translateAlternateColorCodes(
                 '&',
